@@ -6,6 +6,8 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 
 import authRotes from "./routes/authRoutes.js";
+import chargeRoutes from "./routes/chargeRoutes.js";
+
 import { connectDB } from "./config/db.js";
 const app = express();
 
@@ -21,7 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api", authRotes);
-
+app.use("/api", chargeRoutes);
 //START SERVER
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
