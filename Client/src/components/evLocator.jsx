@@ -30,7 +30,7 @@ const EVLocator = () => {
     setLoading(true);
     try {
       const response = await axios.get(
-        `https://ev-locator-2sen.onrender.com/stations?latitude=${latitude}&longitude=${longitude}`
+        `https://ev-locator-2sen.onrender.com/api/stations?latitude=${latitude}&longitude=${longitude}`
       );
       setStation(response.data);
     } catch (err) {
