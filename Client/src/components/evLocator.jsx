@@ -1,12 +1,13 @@
 import { useState } from "react";
 import React from "react";
-
+import axios from "axios";
 import "./evLocator.css";
 
 const EVLocator = () => {
   const [location, setLocation] = useState(null);
   const [station, setStation] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const getUserLocation = () => {
     if ("geolocation" in navigator) {
@@ -26,13 +27,16 @@ const EVLocator = () => {
   };
 
   const fetchNearestStation = async (latitude, longitude) => {
+    setLoading(true);
     try {
       const response = await axios.get(
-        `https://ev-locator-2sen.onrender.com/api/stations?latitude=${latitude}&longitude=${longitude}`
+        `https://ev-locator-2sen.onrender.com/stations?latitude=${latitude}&longitude=${longitude}`
       );
       setStation(response.data);
     } catch (err) {
       setError("Error fetching EV station.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -41,7 +45,7 @@ const EVLocator = () => {
       <h1>Find Nearest EV Charging Station</h1>
       <button onClick={getUserLocation}>Find Station</button>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+      {error && <p className="error">{error}</p>}
 
       {location && (
         <p>
@@ -49,12 +53,16 @@ const EVLocator = () => {
         </p>
       )}
 
+      {loading && <p>Loading...</p>}
+
       {station && (
-        <div>
+        <div className="station-info">
           <h2>Nearest Charging Station</h2>
           <p>{station.AddressInfo.Title}</p>
           <p>{station.AddressInfo.AddressLine1}</p>
-          <p>Distance: {station.AddressInfo.Distance} km</p>
+          <p className="distance">
+            Distance: {station.AddressInfo.Distance} km
+          </p>
         </div>
       )}
     </div>
