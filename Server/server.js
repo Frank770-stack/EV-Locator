@@ -7,7 +7,6 @@ import cookieParser from "cookie-parser";
 
 import chargeRoutes from "./routes/chargeRoutes.js";
 
-import { connectDB } from "./config/db.js";
 const app = express();
 
 const corsOptions = {
@@ -30,5 +29,4 @@ app.use("/api", chargeRoutes);
 const PORT = process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-  connectDB();
 });
