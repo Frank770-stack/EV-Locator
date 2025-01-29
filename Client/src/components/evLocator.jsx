@@ -28,7 +28,7 @@ const EVLocator = () => {
   const fetchNearestStation = async (latitude, longitude) => {
     try {
       const response = await axios.get(
-        `http://localhost:5001/api/stations?latitude=${latitude}&longitude=${longitude}`
+        `https://ev-locator-2sen.onrender.com/api/stations?latitude=${latitude}&longitude=${longitude}`
       );
       setStation(response.data);
     } catch (err) {
