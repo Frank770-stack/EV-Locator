@@ -1,0 +1,154 @@
+/* evLocator.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 20px;
+  font-size: 28px;
+}
+
+h2 {
+  color: #16a085;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #16a085;
+  color: white;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  transition: background-color 0.3s ease;
+  width: 200px; /* Ensuring a consistent button size */
+}
+
+button:hover {
+  background-color: #1abc9c;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+p {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  margin: 10px 0;
+}
+
+p strong {
+  font-weight: bold;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.station-info {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center; /* Ensures everything inside the station info is centered */
+}
+
+.station-info p {
+  font-size: 18px;
+  color: #333;
+}
+
+.station-info h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.station-info .distance {
+  color: #555;
+  font-size: 16px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+  }
+
+  .station-info {
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 90%;
+  }
+
+  .station-info p {
+    font-size: 16px;
+  }
+
+  .station-info h2 {
+    font-size: 20px;
+  }
+
+  .distance {
+    font-size: 14px;
+  }
+}
+
+/* Media Query for Extra Small Devices (Mobile) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+
+  button {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .station-info {
+    padding: 10px;
+    margin: 10px;
+    max-width: 100%;
+  }
+
+  .station-info p {
+    font-size: 14px;
+  }
+
+  .station-info h2 {
+    font-size: 18px;
+  }
+
+  .distance {
+    font-size: 12px;
+  }
+}
