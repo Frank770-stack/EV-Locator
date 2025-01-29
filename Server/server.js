@@ -11,7 +11,7 @@ const app = express();
 
 const corsOptions = {
   // origin: "https://ev-locator-six.vercel.app",
-  origin: "https://ev-locator-six.vercel.app/",
+  origin: "https://ev-locator-six.vercel.app",
   credentials: true,
 };
 app.use(cors(corsOptions));
